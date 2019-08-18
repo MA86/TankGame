@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://TankKinematicBody2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/PNG/Obstacles/barrelGreen_side_damaged.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.1156, 30.4461 )
+
+[node name="Node" type="Node"]
+
+[node name="TankKinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 246.383, 159.743 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 404.321, 169.67 )
+mass = 1.84
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+texture = ExtResource( 2 )

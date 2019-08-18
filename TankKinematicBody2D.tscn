@@ -1,0 +1,67 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://TankKinematicBody2D.cs" type="Script" id=1]
+[ext_resource path="res://assets/PNG/Tanks/tankGreen.png" type="Texture" id=2]
+[ext_resource path="res://turret.png" type="Texture" id=3]
+[ext_resource path="res://assets/PNG/Tanks/barrelBlack.png" type="Texture" id=4]
+[ext_resource path="res://assets/PNG/Smoke/smokeYellow2.png" type="Texture" id=5]
+[ext_resource path="res://assets/PNG/Smoke/smokeYellow3.png" type="Texture" id=6]
+[ext_resource path="res://assets/PNG/Smoke/smokeYellow0.png" type="Texture" id=7]
+[ext_resource path="res://assets/PNG/Smoke/smokeGrey2.png" type="Texture" id=8]
+[ext_resource path="res://assets/PNG/Smoke/smokeGrey1.png" type="Texture" id=9]
+[ext_resource path="res://assets/PNG/Smoke/smokeGrey4.png" type="Texture" id=10]
+[ext_resource path="res://assets/cannon.wav" type="AudioStream" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.3245, 27.8229 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), null ],
+"loop": false,
+"name": "fireSmoke",
+"speed": 5.0
+} ]
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 11 )
+
+[node name="TankKinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+moveWithWASD = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="Sprite"]
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/Sprite2"]
+position = Vector2( 0, 25 )
+scale = Vector2( 0.5, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite/Sprite2/Sprite"]
+position = Vector2( 0, 50 )
+scale = Vector2( 1, 0.625 )
+frames = SubResource( 2 )
+animation = "fireSmoke"
+frame = 6
+speed_scale = 3.0
+playing = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource( 3 )
