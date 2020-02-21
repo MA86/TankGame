@@ -1,4 +1,7 @@
-A 2D tank shooter game made using the Godot game engine. 
+A 2D tank game developed using the Godot game engine and C#. Started this 
+project in the process of learning Godot. This game is unfinished.
 
-Here is a link to a video trailer for this game:
-[https://streamable.com/szjt5](https://streamable.com/9fpeh)
+Here is a link to a video demonstrating this game. Click this link to watch
+the trailer for:
+
+[https://vimeo.com/392853923](https://vimeo.com/392853923)
