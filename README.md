@@ -1,5 +1,8 @@
-Created a 2D tank game using Godot framework. It's a prototype.
+# Tank Battle Game:
+Created a 2D tank battle game using Godot framework. It's a prototype.
 
-Here is a link to a video showing this game:
+# Technologies Used:
+C#, Godot, and Godot Editor.
 
-[https://vimeo.com/392853923](https://vimeo.com/392853923)
+# Demonstration:
+Click on this link to see this game in action: [https://vimeo.com/392853923](https://vimeo.com/392853923)
